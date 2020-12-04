@@ -3,7 +3,7 @@ from .models import submitmodel
 
 def home(request):
     if request.method == 'POST':
-        email = request.get('mail')
+        email = request.POST.get('mail')
         model = submitmodel(text=email)
         model.save()
         template = 'comingsoon/home.html'
